@@ -3,249 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bumkus Showcase — Day 3 Scaffold</title>
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="Bumkus Showcase">
-<meta property="og:title" content="Bumkus Showcase — Day 3 Scaffold">
-<meta property="og:description" content="The AI marketplace — tools for people first. Tester intake and public demos live here.">
-<meta property="og:url" content="https://bumkusshowcase.com/">
-<meta property="og:image" content="https://bumkusshowcase.com/share-card.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Bumkus Showcase — Day 3 Scaffold">
-<meta name="twitter:description" content="The AI marketplace — tools for people first. Tester intake and public demos live here.">
-<meta name="twitter:image" content="https://bumkusshowcase.com/share-card.png">
-
+<title>Bumkus Showcase</title>
 <style>
-  :root{
-    --black:#070707;
-    --panel:#111111;
-    --panel-2:#171717;
-    --silver:#cfcfcf;
-    --silver-dim:#9a9a9a;
-    --brass:#c9a35c;
-    --brass-dark:#8a6f38;
-    --line:#2b2b2b;
-  }
-  *{box-sizing:border-box;}
-  body{
-    margin:0;
-    background:var(--black);
-    color:var(--silver);
-    font-family:Arial, Helvetica, sans-serif;
-    line-height:1.5;
-  }
-  header, main, footer{max-width:1080px;margin:0 auto;padding-left:20px;padding-right:20px;}
-  header{padding-top:44px;padding-bottom:10px;text-align:left;}
-  .eyebrow{
-    color:var(--brass);
-    letter-spacing:.28em;
-    text-transform:uppercase;
-    font-size:12px;
-    margin:0 0 10px 0;
-  }
-  h1, h2, h3{font-family:Georgia, "Times New Roman", serif;color:#f0ead8;font-weight:600;}
-  h1{font-size:54px;line-height:1.02;margin:0 0 12px 0;letter-spacing:.02em;}
-  h2{font-size:30px;margin:0 0 14px 0;}
-  h3{font-size:21px;margin:0 0 8px 0;}
-  .bootstrap{font-size:20px;color:var(--silver);max-width:760px;margin:0;}
-  .bootstrap strong{color:var(--brass);font-weight:700;}
-  .rule{height:1px;background:linear-gradient(90deg,var(--brass),#3a3a3a,transparent);margin:28px 0;}
-  section{padding:26px 0;}
-  .loop{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:12px;
-  }
-  .step{
-    background:var(--panel);
-    border:1px solid var(--line);
-    border-top:3px solid var(--brass-dark);
-    padding:16px;
-    min-height:148px;
-  }
-  .step .num{color:var(--brass);font-family:Georgia,serif;font-size:24px;display:block;margin-bottom:8px;}
-  .step p{margin:0;color:var(--silver);}
-  .intake{
-    background:var(--panel-2);
-    border:1px solid var(--brass-dark);
-    padding:24px;
-  }
-  .question{font-family:Georgia,serif;font-size:32px;color:#f0ead8;margin:0 0 18px 0;}
-  .mutual{color:var(--silver);margin:0 0 16px 0;}
-  .refrain{font-family:Georgia,serif;font-size:21px;color:#f0ead8;margin:18px 0 0 0;}
-  .choices{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:16px;}
-  button.choice{
-    appearance:none;
-    cursor:pointer;
-    text-align:left;
-    background:#0b0b0b;
-    color:var(--silver);
-    border:1px solid var(--silver-dim);
-    padding:18px;
-    font:inherit;
-  }
-  button.choice .big{font-family:Georgia,serif;font-size:24px;color:#f0ead8;display:block;margin-bottom:6px;}
-  button.choice[aria-pressed="true"]{border-color:var(--brass);box-shadow:0 0 0 1px var(--brass) inset;}
-  .track{
-    border-left:3px solid var(--brass);
-    background:#0d0d0d;
-    padding:16px 18px;
-  }
-  .track p{margin:0 0 10px 0;}
-  .track p:last-child{margin-bottom:0;}
-  .shelf{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
-  .card{
-    background:var(--panel);
-    border:1px solid var(--line);
-    padding:18px;
-    position:relative;
-  }
-  .badge{
-    display:inline-block;
-    border:1px solid var(--brass);
-    color:var(--brass);
-    letter-spacing:.16em;
-    font-size:11px;
-    text-transform:uppercase;
-    padding:3px 7px;
-    margin-bottom:12px;
-  }
-  .card dl{margin:14px 0 0 0;}
-  .card dt{color:var(--brass);text-transform:uppercase;letter-spacing:.12em;font-size:11px;margin-top:10px;}
-  .card dd{margin:2px 0 0 0;color:var(--silver);}
-  .stamp{
-    margin-top:16px;
-    border:1px dashed var(--brass-dark);
-    color:var(--silver-dim);
-    padding:10px;
-    text-transform:uppercase;
-    letter-spacing:.12em;
-    font-size:12px;
-  }
-  .doctrine{
-    border-top:1px solid var(--line);
-    border-bottom:1px solid var(--line);
-    padding:24px 0;
-  }
-  .doctrine p{font-family:Georgia,serif;font-size:23px;color:#f0ead8;margin:0 0 12px 0;}
-  .doctrine p:last-child{margin-bottom:0;}
-  footer{padding-top:18px;padding-bottom:38px;color:var(--silver-dim);font-size:13px;}
-  .hidden{display:none;}
-  @media (max-width:820px){
-    h1{font-size:40px;}
-    .loop,.choices,.shelf{grid-template-columns:1fr;}
-  }
+body { font-family: Georgia, serif; margin: 2em auto; max-width: 44em; padding: 0 1em; line-height: 1.5; }
+.card { border-top: 1px solid #ccc; padding: 1em 0; }
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.2em; margin-bottom: 0.2em; }
 </style>
 </head>
 <body>
-<header>
-  <p class="eyebrow">Sandbox scaffold · Day 3 — loop hardened, board persists</p>
-  <h1>BUMKUS SHOWCASE</h1>
-  <p class="bootstrap"><strong>Bootstrap, and clear about it:</strong> built by work, shown by evidence. Bring an idea. We test it in the baby plane, pin the result to the board, and hand back a stamped prototype card.</p>
-  <div class="rule"></div>
-</header>
-
-<main>
-  <section aria-labelledby="how-title">
-    <h2 id="how-title">How it works</h2>
-    <div class="loop">
-      <div class="step"><span class="num">1</span><p><strong>Your idea</strong> comes in through one door, with one question.</p></div>
-      <div class="step"><span class="num">2</span><p><strong>We test it in the baby plane</strong> — the sandbox, never the open floor.</p></div>
-      <div class="step"><span class="num">3</span><p><strong>You see it showcased, stamped</strong> — state, what was tested, and the result.</p></div>
-      <div class="step"><span class="num">4</span><p><strong>If it works:</strong> we build it up, partner, and look for financing together.</p></div>
-    </div>
-  </section>
-
-  <section aria-labelledby="intake-title">
-    <h2 id="intake-title">Start here</h2>
-    <!-- The loop is wired as a Python module (loop/intake.py, Day 2) and proven by a demo run; this panel itself is still front-end only — it submits nothing. -->
-    <div class="intake">
-      <p class="question">Do you need financing, or just testing?</p>
-      <p class="mutual">Being so real about it: what we offer is stated exactly — a test in our sandbox, a stamped result, and two honest tracks. Nothing more is promised. And it runs both ways: you test us, we test the idea, and both sides learn something real.</p>
-      <div class="choices" role="group" aria-label="Choose a track">
-        <button type="button" class="choice" id="btn-financing" aria-pressed="false" onclick="showTrack('financing')">
-          <span class="big">I need financing</span>
-          <span>Test first. Build and partner only if it works.</span>
-        </button>
-        <button type="button" class="choice" id="btn-testing" aria-pressed="true" onclick="showTrack('testing')">
-          <span class="big">I just need testing</span>
-          <span>Run the idea. Get the stamped result.</span>
-        </button>
-      </div>
-      <div class="track" id="track-financing" hidden>
-        <p><strong>Financing track.</strong> The test still comes first. Your idea runs in the baby plane, and the result is pinned to the gravity board.</p>
-        <p>If the test proves the idea can stand, the path can continue: we build it up with you, partner on the build, and look for financing together — standing on evidence, not a story.</p>
-      </div>
-      <div class="track" id="track-testing">
-        <p><strong>Testing track.</strong> Bring the idea. We run it in the baby plane, pin the result to the board, and hand back a stamped prototype card.</p>
-        <p>The card says what was tested, what state it is in, and what the result was. Nothing on the board approves itself; the founder decides what leaves it.</p>
-      </div>
-      <p class="refrain">Help us help you — and that helps us, and we help you again.</p>
-    </div>
-  </section>
-
-  <section aria-labelledby="shelf-title">
-    <h2 id="shelf-title">Prototype shelf</h2>
-    <div class="shelf">
-      <article class="card">
-        <span class="badge">Demo run — sample idea, real machinery</span>
-        <h3>Corner Store Restock List</h3>
-        <p>Milk, eggs, and bread run out every Friday; paper towels and cups run low by midweek; the same supplier order repeats every week</p>
-        <dl>
-          <dt>State</dt><dd>PROPOSED / HELD</dd>
-          <dt>What was tested</dt><dd>The idea text was passed through the micro-plane generation core (rumination intake -&gt; clustering -&gt; cluster cap -&gt; idea emission) and any emitted idea was pinned to the gravity screen.</dd>
-          <dt>Result</dt><dd>Cluster cluster-001 formed under the cap; idea idea-001 emitted and pinned to the gravity screen as pin #1 — HELD.</dd>
-        </dl>
-        <div class="stamp">Stamp · 2026-10-21 · PROPOSED — founder decision pending · Approved: false</div>
-      </article>
-      <article class="card">
-        <span class="badge">Sample</span>
-        <h3>Corner Store Restock</h3>
-        <p>A small store list, tried as a repeating order.</p>
-        <dl>
-          <dt>State</dt><dd>SAMPLE / HELD ON BOARD</dd>
-          <dt>What was tested</dt><dd>Whether scattered items cluster into one repeat order.</dd>
-          <dt>Result</dt><dd>A cluster formed in the sample. Supplier names were left blank on purpose.</dd>
-        </dl>
-        <div class="stamp">Stamp area · Sample only — not a live result</div>
-      </article>
-      <article class="card">
-        <span class="badge">Sample</span>
-        <h3>Neighbor Ride Board</h3>
-        <p>Ride requests, tried as private groups.</p>
-        <dl>
-          <dt>State</dt><dd>SAMPLE / NEEDS FOUNDER REVIEW</dd>
-          <dt>What was tested</dt><dd>Whether requests can be grouped without exposing private details.</dd>
-          <dt>Result</dt><dd>Grouping worked in the sample. No real rider information was used.</dd>
-        </dl>
-        <div class="stamp">Stamp area · Sample only — not a live result</div>
-      </article>
-    </div>
-  </section>
-
-  <section class="doctrine" aria-label="Doctrine">
-    <p>The rate is positive or negative for humanity — not cash, not valuation fog.</p>
-    <p>Value is measured by what lands in the individual's hands.</p>
-    <p>AI is here to push people forward, not confuse them. Showcase means evidence with stamps, never hype.</p>
-  </section>
-</main>
-
-<footer>
-  SANDBOX SCAFFOLD — not a live offer. Day 3 scaffold for Bumkus Showcase; the loop is wired and hardened in the sandbox, and its board persists between runs. The first shelf card is a real demo run of that loop on a sample idea (run 1 of two — the demo board holds both runs' pins, HELD); the other cards are samples. Nothing here is deployed as an offer, and approval belongs to the founder alone.
-</footer>
-
-<script>
-  function showTrack(track){
-    var financing = document.getElementById('track-financing');
-    var testing = document.getElementById('track-testing');
-    var btnFinancing = document.getElementById('btn-financing');
-    var btnTesting = document.getElementById('btn-testing');
-    var isFinancing = track === 'financing';
-    financing.hidden = !isFinancing;
-    testing.hidden = isFinancing;
-    btnFinancing.setAttribute('aria-pressed', isFinancing ? 'true' : 'false');
-    btnTesting.setAttribute('aria-pressed', isFinancing ? 'false' : 'true');
-  }
-</script>
+  <header>
+    <h1>Bumkus Showcase</h1>
+    <p>New ideas get tested here before anyone builds them for real.
+You bring an idea, we test it in a safe copy, and you get the result in writing.</p>
+  </header>
+  <main>
+    <section class="card">
+      <h2>My AI Assistance Office</h2>
+      <p>Custom AI work environments for small businesses, built around the way you already work.
+You bring the business; the office builds the system, and you own what it makes.</p>
+      <p><a href="https://myaiassistanceoffice.com">Visit My AI Assistance Office</a></p>
+    </section>
+    <section class="card">
+      <h2>Bumkus</h2>
+      <p>The IP house behind everything on this page.
+It builds the systems, apps, and tools, and partner-operators run the ventures.</p>
+      <p><a href="https://bumkus.com">Visit Bumkus</a></p>
+    </section>
+    <section class="card">
+      <h2>AI Governance Office (Echolus)</h2>
+      <p>Your AI should keep receipts.
+Echolus records what your AI did, shows the work behind every claim, and hands you evidence you can stand behind.</p>
+      <p><a href="https://theaigovernanceoffice.com">Visit AI Governance Office (Echolus)</a></p>
+    </section>
+    <section class="card">
+      <h2>Bumkus Notes</h2>
+      <p>A server&#x27;s own checkout, numbers, and ideas in one place.
+It shows you how you&#x27;re doing against your own averages, and suggests ways to do better — without ever writing into your sealed record.</p>
+      <p><a href="https://bumkusnotes.com">Visit Bumkus Notes</a></p>
+    </section>
+    <section class="card">
+      <h2>Evie / GymFlow</h2>
+      <p>Gymnastics scoring that stays clean and calm.
+Coaches and gymnasts see the same routine scored the same way, every time.</p>
+      <p><a href="https://bumkussport.com">Visit Evie / GymFlow</a></p>
+    </section>
+    <section class="card">
+      <h2>The QR Office</h2>
+      <p>Every code belongs to one real thing, and can prove it.
+A code makes that thing findable to the person standing in front of it — never a billboard, never a megaphone.</p>
+      <p><a href="https://qr.bumkusnotes.com">Visit The QR Office</a></p>
+    </section>
+    <section class="card">
+      <h2>Bubzy Boy</h2>
+      <p>Adventures and activities for little kids, starring Bubzy Boy.
+Stories you can read aloud, games to play, and a shelf that keeps growing.</p>
+      <p><a href="https://bubzyboy.com">Visit Bubzy Boy</a></p>
+    </section>
+    <section class="card">
+      <h2>Good Ol&#x27; Dad</h2>
+      <p>Stories told straight and warm.
+About work, family, and the man nobody handed anything.</p>
+      <p><a href="https://goodoldad.marketing">Visit Good Ol&#x27; Dad</a></p>
+    </section>
+  </main>
 </body>
 </html>
